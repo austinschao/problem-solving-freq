@@ -1,3 +1,37 @@
-// add whatever parameters you deem necessary & write doc comment
-function canConstructWord() {
+'use strict'
+// Parameter => two strings, one is a word and other is some letters
+// Return => True, if word can be made with letters, else false
+
+// Check the letter counter to see if the value of the
+//    key matching the word counter is greater or equal to the
+//    word counter key-value
+
+function canConstructWord(word, letters) {
+  if (word.length > letters.length) {
+    return false;
+  }
+  // Create count obj of both arguments
+  let wordCount = freqCounter(word);
+  let lettersCount = freqCounter(letters);
+  // Check the letter counter to see if the value of the
+  //    key matching the word counter is greater or equal to the
+  //    word counter key-value
+  for (let key of lettersCount.keys()) {
+    if (lettersCount.get(key) < wordCount.get(key)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+// Create a counter (map) for both arguments
+function freqCounter(str) {
+  const count = new Map();
+
+  for (let char of str) {
+    let charCount = count.get(char) || 0;
+    count.set(char, charCount + 1);
+  }
+  return count;
 }
