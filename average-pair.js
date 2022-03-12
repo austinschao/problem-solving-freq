@@ -5,13 +5,14 @@
 //checking if the average of any two values in the array === target
 // return true or false
 
-/**Figures out if average of any pair of integers matches target*/
+/**Given a sorted arr of integers and a target num,
+ * check if average of any pair of integers matches target*/
 function averagePair(integers, target) {
   let left = 0;
   let right = integers.length - 1;
 
   while (left < right) {
-    let intAverage = (integers[left] + integers[right]) / 2;
+    const intAverage = (integers[left] + integers[right]) / 2;
     if (intAverage === target) {
       return true;
     } else if (intAverage > target) {

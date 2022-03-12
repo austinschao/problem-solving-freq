@@ -12,8 +12,8 @@ function canConstructWord(word, letters) {
     return false;
   }
   // Create count obj of both arguments
-  let wordCount = freqCounter(word);
-  let lettersCount = freqCounter(letters);
+  const wordCount = makeFreqCounter(word);
+  const lettersCount = makeFreqCounter(letters);
   // Check the letter counter to see if the value of the
   //    key matching the word counter is greater or equal to the
   //    word counter key-value
@@ -27,7 +27,7 @@ function canConstructWord(word, letters) {
 
 
 // Create a counter (map) for both arguments
-function freqCounter(str) {
+function makeFreqCounter(str) {
   const count = new Map();
 
   for (let char of str) {

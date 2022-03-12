@@ -16,13 +16,13 @@
 
 
 function twoArrayObject(keys, values) {
-  const objFromArrays = {};
+  const objFromArr = {};
 
   for (let i = 0; i < keys.length; i++) {
     if (values[i] === undefined) {
       values[i] = null;
     }
-    objFromArrays[keys[i]] = values[i];
+    objFromArr[keys[i]] = values[i];
   }
   return objFromArrays;
 }
