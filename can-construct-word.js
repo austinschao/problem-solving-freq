@@ -6,6 +6,7 @@
 //    key matching the word counter is greater or equal to the
 //    word counter key-value
 
+/** Checks to see if word can be made from letters */
 function canConstructWord(word, letters) {
   if (word.length > letters.length) {
     return false;
